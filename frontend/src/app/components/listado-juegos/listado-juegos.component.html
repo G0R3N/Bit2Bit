@@ -1,0 +1,10 @@
+<div *ngIf="juegos && juegos.length; else sinJuegos" class="games-container">
+  <div *ngFor="let juego of juegos" class="game-card">
+    <h2>{{ juego.titulo }}</h2>
+    <p><strong>Autor:</strong> {{ juego.autor }}</p>
+  </div>
+</div>
+
+<ng-template #sinJuegos>
+  <p>No hay juegos disponibles.</p>
+</ng-template>

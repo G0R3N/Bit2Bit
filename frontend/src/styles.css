@@ -1,0 +1,12 @@
+html,
+body {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100%;
+}
+@font-face {
+  font-family: "MiFuente";
+  src: url("assets/fonts/Retro\ Gaming.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
