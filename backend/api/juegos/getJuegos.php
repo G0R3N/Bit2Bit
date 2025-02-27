@@ -7,8 +7,7 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 require_once '../../config/config.php';
 
 try {
-
-    $stmt = $pdo->prepare("SELECT juegos.id, juegos.titulo, juegos.descripcion, juegos.ruta_archivos, juegos.fecha_subida, 
+    $stmt = $pdo->prepare("SELECT juegos.id, juegos.titulo, juegos.descripcion, juegos.ruta_archivos, juegos.logo, juegos.fecha_subida, 
                                   usuarios.username AS autor, categorias.nombre AS categoria
                            FROM juegos
                            JOIN usuarios ON juegos.usuario_id = usuarios.id
@@ -22,3 +21,4 @@ try {
 } catch (Exception $e) {
     echo json_encode(["success" => false, "error" => $e->getMessage()]);
 }
+?>

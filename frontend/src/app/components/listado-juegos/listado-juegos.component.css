@@ -1,47 +1,93 @@
+/* Tarjeta de juego */
 .game-card {
   width: 300px !important;
   height: 300px !important;
-  background-color: #000000 !important;
   border: 2px solid #ebe534 !important;
   border-radius: 16px !important;
+  background-color: black;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4) !important;
   color: #ffffff !important;
   overflow: hidden !important;
   position: relative !important;
   transition: transform 0.3s ease, box-shadow 0.3s ease !important;
-  margin: 1rem;
+  margin: 1rem !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  cursor: pointer;
 }
 
+/* Efecto hover para la tarjeta */
 .game-card:hover {
   transform: scale(1.05) !important;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6) !important;
 }
 
+/* Efecto de gradiente en hover con pseudo-elemento */
 .game-card::before {
   content: "" !important;
   position: absolute !important;
   top: 0 !important;
   left: 0 !important;
   height: 100% !important;
-  width: 0% !important;
-  background: linear-gradient(135deg, #ebe534, #870dd4) !important;
-  transition: width 0.3s ease !important;
+  width: 100% !important;
+  background: linear-gradient(135deg, #ebe534, #8759c0) !important;
+  transition: opacity 0.3s ease !important;
+  opacity: 0 !important;
   pointer-events: none !important;
   z-index: 1 !important;
 }
 
 .game-card:hover::before {
-  width: 100% !important;
+  opacity: 0.3 !important;
 }
 
+/* Aseguramos que el contenido interno quede por encima del pseudo-elemento */
 .game-card > * {
   position: relative !important;
   z-index: 2 !important;
 }
+
+/* Contenedor de todas las tarjetas */
 .games-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-  padding: 1rem;
+  text-align: center !important;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 1rem !important;
+  justify-content: center !important;
+  padding: 1rem !important;
+}
+
+/* Contenido de la tarjeta (arriba) */
+.card-content {
+  padding: 1rem !important;
+}
+
+/* Estilo para el autor: se posiciona en la parte inferior */
+.author {
+  margin-top: auto !important;
+  padding: 0.5rem !important;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ) !important; /* Opcional: para mejorar la legibilidad */
+  text-align: center !important;
+}
+
+.title {
+  margin-top: auto !important;
+  width: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ) !important; /* Opcional: para mejorar la legibilidad */
+  text-align: center !important;
 }

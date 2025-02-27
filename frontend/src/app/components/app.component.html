@@ -1,34 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bit2Bit</title>
-    <link rel="stylesheet" href="app.component.css" />
-    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<main class="main">
+  <header>
+    <nav class="navbar">
+      <a routerLink="/" class="logo">Bit2Bit</a>
+      <ul class="nav-links">
+        <li><a routerLink="/">Inicio</a></li>
+        <li><a routerLink="/juegos">Juegos</a></li>
+        <li><a routerLink="/login">Login</a></li>
+        <li><a routerLink="/registro">Registro</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  </head>
-  <body>
-    <main class="main">
-      <header>
-        <nav class="navbar">
-          <a routerLink="/" class="logo">Bit2Bit</a>
-          <ul class="nav-links">
-            <li><a routerLink="/">Inicio</a></li>
-            <li><a routerLink="/juegos">Juegos</a></li>
-            <li><a routerLink="/login">Login</a></li>
-            <li><a routerLink="/registro">Registro</a></li>
-          </ul>
-        </nav>
-      </header>
+  <section class="content">
+    
+    <button *ngIf="router.url !== '/crear-juego'" class="custom-button" routerLink="/crear-juego">Crear Juego</button>
+    
+    <router-outlet></router-outlet>
+  </section>
 
-      <section class="content">
-        <router-outlet></router-outlet>
-      </section>
-
-      <footer>
-        <p>&copy; 2025 Bit2Bit. Todos los derechos reservados.</p>
-      </footer>
-    </main>
-  </body>
-</html>
+  <footer>
+    <p>&copy; 2025 Bit2Bit. Todos los derechos reservados.</p>
+  </footer>
+</main>

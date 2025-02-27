@@ -1,7 +1,19 @@
 <div *ngIf="juegos && juegos.length; else sinJuegos" class="games-container">
-  <div *ngFor="let juego of juegos" class="game-card">
-    <h2>{{ juego.titulo }}</h2>
-    <p><strong>Autor:</strong> {{ juego.autor }}</p>
+  <div *ngFor="let juego of juegos" 
+       class="game-card"
+       [ngStyle]="{
+        'background-image': 'url(' + ('http://localhost/BIT2BIT/backend/' + juego.logo).trim() + ')',
+        'background-size': 'cover',
+        'background-position': 'center',
+        'background-repeat': 'no-repeat'
+      }"
+      >
+    <div class="card-content">
+      <div class="title">
+        <h2>{{ juego.titulo }}</h2>
+      </div>
+    </div>
+    <p class="author"><strong>Autor:</strong> {{ juego.autor }}</p>
   </div>
 </div>
 

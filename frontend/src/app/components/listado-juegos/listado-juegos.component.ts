@@ -7,17 +7,15 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './listado-juegos.component.html',
-  styleUrls: ['./listado-juegos.component.css']
+  styleUrls: ['./listado-juegos.component.css'],
 })
-
 export class ListadoJuegosComponent implements OnInit {
-
   juegos: any[] = [];
 
-  constructor(private juegoService: JuegoService) { }
+  constructor(private juegoService: JuegoService) {}
 
   ngOnInit(): void {
-    this.juegoService.obtenerJuegos().subscribe(response => {
+    this.juegoService.obtenerJuegos().subscribe((response) => {
       if (response.success) {
         this.juegos = response.data;
       } else {

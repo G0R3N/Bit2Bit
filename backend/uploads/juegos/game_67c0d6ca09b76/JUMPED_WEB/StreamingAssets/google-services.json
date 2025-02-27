@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "558183683677",
+    "firebase_url": "https://jumped1-d33c9-default-rtdb.firebaseio.com",
+    "project_id": "jumped1-d33c9",
+    "storage_bucket": "jumped1-d33c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:558183683677:android:2cc65dea9fbbd071d55fb4",
+        "android_client_info": {
+          "package_name": "com.defaultCompany.Jumped"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvHtk-B4zEfWPMIWoYPxI5yuYAWQSpX6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

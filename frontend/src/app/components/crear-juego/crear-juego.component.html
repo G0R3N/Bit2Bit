@@ -1,0 +1,49 @@
+<div class="crear-juego">
+  <h2>Agrega tu Juego</h2>
+  <form
+    [formGroup]="juegoForm"
+    (ngSubmit)="submitJuego()"
+    enctype="multipart/form-data"
+  >
+    <div>
+      <label for="titulo">Título:</label>
+      <input id="titulo" formControlName="titulo" type="text" required />
+    </div>
+    <div>
+      <label for="descripcion">Descripción:</label>
+      <textarea id="descripcion" formControlName="descripcion"></textarea>
+    </div>
+    <div>
+      <label for="categoria">Categoría:</label>
+      <select id="categoria" formControlName="categoria" required>
+        <option value="" disabled>Seleccione una categoría</option>
+        <option value="1">Acción</option>
+        <option value="2">Aventura</option>
+        <option value="3">Puzzle</option>
+      </select>
+    </div>
+
+    <div class="file-input-wrapper">
+      <label for="juegoFile">Archivo del Juego (.ZIP):</label>
+      <input
+        id="juegoFile"
+        type="file"
+        accept=".zip"
+        (change)="onFileSelected($event, 'juego')"
+        required
+      />
+    </div>
+    <div>
+      <label for="logoFile">Logo del Juego (opcional):</label>
+      <input
+        id="logoFile"
+        type="file"
+        accept=".png, .jpg, .jpeg"
+        (change)="onFileSelected($event, 'logo')"
+      />
+    </div>
+    <div class="button">
+      <button type="submit" [disabled]="juegoForm.invalid">Subir Juego</button>
+    </div>
+  </form>
+</div>
